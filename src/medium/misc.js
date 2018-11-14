@@ -55,3 +55,23 @@ let firstNonRepeatingCharacter = (string) => {
         }
     }
 }
+
+// longest substring in a string
+
+let longestSubstring = (string) => {
+	let subString = [];
+    for(let i=0; i<string.length; i++) {
+        let temp = string[i];
+		let j = i;
+        while(j < string.length) {
+            if(string[j] !== string[j+1] && string[j+1] && !temp.includes(string[j+1])) {
+            	temp = temp+string[j+1];
+            } else {
+				break
+			}
+            j++;
+        }
+		subString.push(temp);
+    }
+	return subString;
+}
